@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz visuel – Séquences de secours</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="pill">Quiz interactif · Drag &amp; Drop</p>
+        <h1>Remets les gestes de secours dans le bon ordre</h1>
+        <p class="lead">
+          Choisis une séquence, mélange les cartes puis glisse-dépose les visuels pour reconstituer le déroulé chronologique. Le tout fonctionne hors ligne, directement depuis cette page.
+        </p>
+        <div class="hero__actions">
+          <label class="select-wrapper" for="quiz-select">
+            <span>Choisir une séquence</span>
+            <select id="quiz-select" aria-label="Choix du quiz"></select>
+          </label>
+          <button id="shuffle" class="btn ghost" type="button">Mélanger les cartes</button>
+        </div>
+      </div>
+      <div class="hero__glow" aria-hidden="true"></div>
+    </header>
+
+    <main class="layout" aria-live="polite">
+      <section class="panel">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">Séquence en cours</p>
+            <h2 id="quiz-title"></h2>
+            <p id="quiz-desc" class="muted"></p>
+          </div>
+          <div class="panel__actions">
+            <button id="check" class="btn primary" type="button">Vérifier l’ordre</button>
+            <button id="restart" class="btn" type="button">Réinitialiser</button>
+          </div>
+        </header>
+
+        <div class="feedback" role="status" aria-live="assertive">
+          <p id="feedback-text">Commence par mélanger et organiser les cartes.</p>
+          <div class="progress" aria-hidden="true">
+            <div id="progress-bar" class="progress__bar"></div>
+          </div>
+        </div>
+
+        <div class="board" id="board" role="list" aria-label="Zone de reconstitution de la séquence"></div>
+
+        <div class="legend">
+          <div class="chip success"></div>
+          <p>Bonne position</p>
+          <div class="chip error"></div>
+          <p>Mauvaise position</p>
+        </div>
+      </section>
+
+      <aside class="tips">
+        <h3>Astuce accessibilité</h3>
+        <ul>
+          <li>Utilise le clavier : sélectionne une carte et appuie sur ← ou → pour la déplacer.</li>
+          <li>Chaque carte possède des boutons « Déplacer à gauche/droite » pour un contrôle précis.</li>
+          <li>Les annonces vocales confirment le nombre de cartes bien placées après vérification.</li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p>Conçu en HTML, CSS et JavaScript vanilla. Fonctionne entièrement hors ligne.</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
