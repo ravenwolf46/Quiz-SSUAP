@@ -1,4 +1,4 @@
-export const QUIZZES = [
+window.QUIZZES = [
   {
     id: 'sequence-20-09-1',
     title: 'Protocole visuel 20-09 – Série 1',

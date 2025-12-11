@@ -1,5 +1,3 @@
-import { QUIZZES } from './quizzes.js';
-
 const state = {
   currentQuiz: null
 };
